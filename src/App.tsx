@@ -4,6 +4,9 @@ import Layout from './components/Layout';
 import { ThemeProvider, Box } from '@mui/system';
 import { appTheme } from './config/theme';
 import { Routes, Route } from 'react-router-dom';
+import ListCategory from './features/categories/ListCategory';
+import CreateCategory from './features/categories/CreateCategory';
+import EditCategory from './features/categories/EditCategory';
 
 
 
@@ -19,7 +22,12 @@ function App() {
         <Header />
         <Layout>
           <Routes>
-            <Route path="/" element={<h1>Olá</h1>} />
+            <Route path="/" element={<ListCategory />} />
+            <Route path="/categories" element={<ListCategory />} />
+            <Route path="/categories/create" element={<CreateCategory />} />
+            <Route path="/categories/edit/:id" element={<EditCategory />} />
+
+            <Route path="*" element={<h1>404</h1>} />
           </Routes>
         </Layout>
       </Box>
