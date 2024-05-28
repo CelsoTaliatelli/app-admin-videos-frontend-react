@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Layout from './components/Layout';
 import { ThemeProvider, Box } from '@mui/system';
 import { appTheme } from './config/theme';
+import { Routes, Route } from 'react-router-dom';
 
 
 
@@ -17,7 +18,9 @@ function App() {
       >
         <Header />
         <Layout>
-          <h1>Olá</h1>
+          <Routes>
+            <Route path="/" element={<h1>Olá</h1>} />
+          </Routes>
         </Layout>
       </Box>
     </ThemeProvider>
